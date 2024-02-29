@@ -120,7 +120,7 @@
             <div class="ticket">
               <div class="ticket-wrap">
                 <div class="ticket-option">
-                  <div class="ticket-list">
+                  <div class="ticket-list ticket-trip">
                     <div class="ticket-item">
                       <span class="cricle"></span>
                       <span>One way / Round-trip</span>
@@ -132,25 +132,91 @@
                   </div>
                 </div>
                 <div class="ticket-option">
-                  <div class="ticket-select">
+                  <div class="ticket-list ticket-classify">
                     <div class="ticket-item">
-                      <div class="select">
-                        <select
-                          class="select-list custom-select"
-                          placeholder="Chọn liên kết website"
+                      <div class="dropdown">
+                        <input
+                          type="checkbox"
+                          class="dropdown__switch"
+                          id="filter-switch"
+                          hidden
+                        />
+                        <label
+                          for="filter-switch"
+                          class="dropdown__options-filter"
                         >
-                          <option>Tập đoàn Điện lực Việt Nam</option>
-                        </select>
+                          <ul
+                            class="dropdown__filter"
+                            role="listbox"
+                            tabindex="-1"
+                          >
+                            <li
+                              class="dropdown__filter-selected"
+                              aria-selected="true"
+                            >
+                              Default option
+                            </li>
+                            <li>
+                              <ul class="dropdown__select">
+                                <li
+                                  class="dropdown__select-option"
+                                  role="option"
+                                >
+                                  Option 1
+                                </li>
+                                <li
+                                  class="dropdown__select-option"
+                                  role="option"
+                                >
+                                  Option 2
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </label>
                       </div>
                     </div>
                     <div class="ticket-item">
-                      <div class="select">
-                        <select
-                          class="select-list custom-select"
-                          placeholder="Chọn liên kết website"
+                      <div class="dropdown">
+                        <input
+                          type="checkbox"
+                          class="dropdown-switch"
+                          id="filter-switch"
+                          hidden
+                        />
+                        <label
+                          for="filter-switch"
+                          class="dropdown__options-filter"
                         >
-                          <option>Tập đoàn Điện lực Việt Nam</option>
-                        </select>
+                          <ul
+                            class="dropdown__filter"
+                            role="listbox"
+                            tabindex="-1"
+                          >
+                            <li
+                              class="dropdown__filter-selected"
+                              aria-selected="true"
+                            >
+                              Default option
+                            </li>
+                            <li>
+                              <ul class="dropdown__select">
+                                <li
+                                  class="dropdown__select-option"
+                                  role="option"
+                                >
+                                  Option 1
+                                </li>
+                                <li
+                                  class="dropdown__select-option"
+                                  role="option"
+                                >
+                                  Option 2
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </label>
                       </div>
                     </div>
                   </div>

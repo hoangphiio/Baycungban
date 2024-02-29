@@ -1,0 +1,43 @@
+.ticket {
+  padding: 3rem;
+  border-radius: 1.2rem;
+  flex-direction: column;
+  background: $color-white;
+  box-shadow: 0 0.4rem 3rem 0 #4d46fa1a;
+  @include flex;
+  &-wrap {
+    margin: 0 -2.5rem;
+    @include flex-al;
+  }
+  &-option {
+    padding: 0 2.5rem;
+  }
+  &-list {
+    @include flex-al;
+  }
+  &-trip {
+    gap: 2rem;
+  }
+  &-classify {
+    gap: 5rem;
+  }
+  &-item {
+    gap: 0.6rem;
+    @include flex-al;
+    span {
+      display: block;
+    }
+    .cricle {
+      background: #f4f2f9;
+      @include cir(2.4rem);
+      &.active {
+        border: 0.6rem solid $color-first;
+      }
+    }
+    &.active {
+      .cricle {
+        border: 0.6rem solid $color-first;
+      }
+    }
+  }
+}

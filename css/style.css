@@ -327,3 +327,68 @@ table {
   border-radius: 1.2rem;
   background: #4d46fa;
 }
+
+.ticket {
+  padding: 3rem;
+  border-radius: 1.2rem;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 0.4rem 3rem 0 rgba(77, 70, 250, 0.1019607843);
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+.ticket-wrap {
+  margin: 0 -2.5rem;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.ticket-option {
+  padding: 0 2.5rem;
+}
+.ticket-list {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.ticket-trip {
+  gap: 2rem;
+}
+.ticket-classify {
+  gap: 5rem;
+}
+.ticket-item {
+  gap: 0.6rem;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.ticket-item span {
+  display: block;
+}
+.ticket-item .cricle {
+  background: #f4f2f9;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+}
+.ticket-item .cricle.active {
+  border: 0.6rem solid #4d46fa;
+}
+.ticket-item.active .cricle {
+  border: 0.6rem solid #4d46fa;
+}
