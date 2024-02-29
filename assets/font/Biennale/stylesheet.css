@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Biennale";
+  src: url("Biennale-Regular.woff2") format("woff2"),
+    url("Biennale-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

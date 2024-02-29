@@ -1,0 +1,60 @@
+.banner {
+  z-index: 3;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  &-home {
+    height: 100%;
+    position: relative;
+    @include flex;
+    &::before {
+      content: "";
+      width: 100%;
+      display: block;
+      padding-top: calc(56.25% - 20rem);
+    }
+  }
+  &-background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    img {
+      height: 100%;
+    }
+  }
+  &-content {
+    height: 100%;
+    position: relative;
+    @include flex-btw;
+  }
+  &-position {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @include flex-ct;
+  }
+  &.fullScreen {
+    height: 100vh;
+  }
+  &-title {
+    > * {
+      font-weight: 400;
+      font-size: 7.2rem;
+    }
+    h3 {
+      span {
+        font-weight: 700;
+        color: $color-first;
+      }
+    }
+  }
+}

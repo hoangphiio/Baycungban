@@ -1,0 +1,329 @@
+@import url("../assets/font/Biennale/stylesheet.css");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+* ::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 5px;
+  height: 100%;
+}
+* ::-webkit-scrollbar-track {
+  background: #fff;
+}
+* ::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 16px;
+}
+* :hover::-webkit-scrollbar-thumb {
+  background: #b9b9b9;
+  border-radius: 10px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  font-weight: 700;
+  font-family: "Biennale";
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 120rem;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.banner {
+  z-index: 3;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.banner-home {
+  height: 100%;
+  position: relative;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+.banner-home::before {
+  content: "";
+  width: 100%;
+  display: block;
+  padding-top: calc(56.25% - 20rem);
+}
+.banner-background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  position: absolute;
+}
+.banner-background img {
+  height: 100%;
+}
+.banner-content {
+  height: 100%;
+  position: relative;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.banner-position {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+.banner.fullScreen {
+  height: 100vh;
+}
+.banner-title > * {
+  font-weight: 400;
+  font-size: 7.2rem;
+}
+.banner-title h3 span {
+  font-weight: 700;
+  color: #4d46fa;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  z-index: 10;
+  position: fixed;
+}
+.header-wrap {
+  height: 100%;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.header-column {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+.header-column:nth-child(1) {
+  gap: 1.5rem;
+}
+.header-logo a {
+  font-size: 3rem;
+  font-weight: 600;
+  display: block;
+}
+.header-language {
+  gap: 1rem;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.header-language a {
+  position: relative;
+  cursor: pointer;
+}
+.header-language a.active {
+  padding: 0.2rem;
+  border-radius: 10rem;
+  background: #4d46fa;
+}
+.header-menu .menu {
+  margin: 0 -1.5rem;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+.header-menu .menu-item {
+  padding: 0 1.5rem;
+}
+.header-menu .menu-item a {
+  font-weight: 600;
+}
+.header-link .btn-register {
+  font-weight: 600;
+  color: #fff;
+  padding: 1rem 1.6rem;
+  border-radius: 1.2rem;
+  background: #4d46fa;
+}

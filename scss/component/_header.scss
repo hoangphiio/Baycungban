@@ -1,0 +1,61 @@
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  z-index: 10;
+  position: fixed;
+  &-wrap {
+    height: 100%;
+    @include flex-btw;
+  }
+  &-column {
+    @include flex;
+    &:nth-child(1) {
+      gap: 1.5rem;
+    }
+  }
+  &-logo {
+    a {
+      font-size: 3rem;
+      font-weight: 600;
+      display: block;
+    }
+  }
+  &-language {
+    gap: 1rem;
+    @include flex-al;
+    a {
+      position: relative;
+      cursor: pointer;
+    }
+    a.active {
+      padding: 0.2rem;
+      border-radius: 10rem;
+      background: $color-first;
+    }
+  }
+  &-menu {
+    .menu {
+      margin: 0 -1.5rem;
+      @include flex;
+      &-item {
+        padding: 0 1.5rem;
+        a {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  &-link {
+    .btn {
+      &-register {
+        font-weight: 600;
+        color: $color-white;
+        padding: 1rem 1.6rem;
+        border-radius: 1.2rem;
+        background: $color-first;
+      }
+    }
+  }
+}
