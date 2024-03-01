@@ -2,3 +2,133 @@ $color-first: #4d46fa;
 $color-second: #f06336;
 $color-white: #fff;
 $color-black: #000;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  opacity: 0;
+  transition: 0.4s;
+  visibility: hidden;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+.btn {
+  display: block;
+  font-weight: 600;
+  padding: 1rem 1.6rem;
+  border-radius: 1.2rem;
+  color: $color-white;
+  transition: 0.4s ease-in-out;
+}
+
+.select {
+  &-menu {
+    &.active {
+      .select-options {
+        opacity: 1;
+        visibility: visible;
+        animation: fadeInUp 0.4s both;
+        -webkit-animation: fadeInUp 0.4s both;
+      }
+      .down {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &-btn {
+    .down {
+      width: 0.8rem;
+      height: 0.4rem;
+      transition: 0.4s ease-in-out;
+    }
+  }
+  &-options {
+    left: 0;
+    opacity: 0;
+    z-index: 8;
+    padding: 0.5rem;
+    overflow: hidden;
+    position: absolute;
+    visibility: hidden;
+    border-radius: 1.2rem;
+    background: #fff;
+    box-shadow: 0 0.4rem 3rem 0 rgba(77, 70, 250, 0.1019607843);
+    animation: fadeInDown 0.3s both;
+    -webkit-animation: fadeInDown 0.3s both;
+    .option {
+      padding: 0.5rem;
+      cursor: pointer;
+      span {
+        display: block;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.come {
+  width: 100%;
+  &-column {
+    @include flex-btw;
+  }
+  &-time {
+    span {
+      &:first-child,
+      &:last-child {
+        font-weight: 700;
+      }
+    }
+  }
+  .line {
+    width: 12rem;
+    margin: 0 auto;
+    height: 0.1rem;
+    display: block;
+    position: relative;
+    background: $color-first;
+    &::before,
+    &::after {
+      content: "";
+      top: 0;
+      margin: auto;
+      bottom: 0;
+      width: 0.5rem;
+      height: 0.7rem;
+      display: block;
+      position: absolute;
+      border-radius: 10rem;
+      border: 0.2rem solid $color-first;
+    }
+    &::before {
+      left: -0.8rem;
+    }
+    &::after {
+      content: "";
+      right: -0.8rem;
+      background: $color-first;
+    }
+  }
+  &-direct {
+    span {
+      &:first-child,
+      &:last-child {
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 10rem;
+        padding: 0.3rem 0.5rem;
+        background: #4d46fa1a;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

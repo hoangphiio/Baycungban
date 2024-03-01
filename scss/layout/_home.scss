@@ -4,9 +4,18 @@
   &-wrap {
     margin: 0 -2.5rem;
     @include flex-al;
+    @include max(767px) {
+      margin: 0;
+      gap: 2rem;
+      align-items: baseline;
+      flex-direction: column;
+    }
   }
   &-option {
     padding: 0 2.5rem;
+    @include max(767px) {
+      padding: 0;
+    }
   }
   &-list {
     height: 100%;
@@ -17,13 +26,13 @@
   }
   &-classify {
     gap: 5rem;
+    @include max(1200px) {
+      gap: 2rem;
+    }
   }
   &-item {
     gap: 0.6rem;
     @include flex-al;
-    span {
-      display: block;
-    }
     .cricle {
       background: #f4f2f9;
       @include cir(2.4rem);
@@ -49,17 +58,6 @@
     .select {
       &-menu {
         position: relative;
-        &.active {
-          .select-options {
-            opacity: 1;
-            visibility: visible;
-            animation: fadeInUp 0.4s both;
-            -webkit-animation: fadeInUp 0.4s both;
-          }
-          .down {
-            transform: rotate(180deg);
-          }
-        }
       }
       &-btn {
         gap: 0.4rem;
@@ -69,30 +67,10 @@
         .btn-text {
           display: block;
         }
-        .down {
-          width: 0.8rem;
-          height: 0.4rem;
-          transition: 0.4s ease-in-out;
-        }
       }
       &-options {
-        left: 0;
         top: 2.4rem;
-        opacity: 0;
         min-width: 16rem;
-        padding: 0.5rem;
-        overflow: hidden;
-        position: absolute;
-        visibility: hidden;
-        border-radius: 1.2rem;
-        background: $color-white;
-        box-shadow: 0 0.4rem 3rem 0 #4d46fa1a;
-        animation: fadeInDown 0.3s both;
-        -webkit-animation: fadeInDown 0.3s both;
-        .option {
-          padding: 0.5rem;
-          cursor: pointer;
-        }
       }
     }
   }
@@ -101,10 +79,19 @@
   &-wrap {
     margin: 0 -1rem;
     @include flex;
+    @include max(1200px) {
+      gap: 2rem;
+      margin: 0;
+      flex-wrap: wrap;
+    }
   }
   &-column {
     padding: 0 1rem;
     width: calc(100% / 2);
+    @include max(1200px) {
+      width: 100%;
+      padding: 0;
+    }
     &:last-child {
       .infomation-list {
         gap: 3rem;
@@ -117,10 +104,17 @@
   &-list {
     height: 100%;
     @include flex-al;
+    @include max(630px) {
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
   }
   &-item {
     &:first-child {
       width: 50%;
+      @include max(630px) {
+        width: 100%;
+      }
       .infomation-from {
         &::after {
           content: "";
@@ -134,13 +128,27 @@
           position: absolute;
           background: rgba(0, 0, 0, 0.1);
           clip-path: circle(50% at 100% 50%);
+          @include max(630px) {
+            display: none;
+          }
         }
+      }
+    }
+    &:nth-child(2) {
+      @include max(630px) {
+        margin: 0 auto;
       }
     }
     &:last-child {
       width: 50%;
+      @include max(630px) {
+        width: 100%;
+      }
       .infomation-from {
         padding-left: 4rem;
+        @include max(630px) {
+          padding-left: 1.5rem;
+        }
         &::before {
           content: "";
           top: 0;
@@ -153,6 +161,9 @@
           position: absolute;
           background: $color-first;
           clip-path: circle(50% at 0% 50%);
+          @include max(630px) {
+            display: none;
+          }
         }
       }
     }
@@ -175,6 +186,9 @@
       position: absolute;
       border-radius: 50%;
       background: $color-white;
+      @include max(630px) {
+        display: none;
+      }
     }
     img {
       z-index: 4;
@@ -186,6 +200,9 @@
     border-radius: 1.2rem;
     padding: 1.5rem 2rem;
     border: 0.2rem solid rgba(0, 0, 0, 0.1);
+    @include max(767px) {
+      padding: 1.5rem;
+    }
     &.active {
       border-color: $color-first;
     }
@@ -219,6 +236,7 @@
         color: $color-first;
         position: relative;
         background: transparent;
+        font-family: "Biennale";
         cursor: pointer;
       }
       img {
@@ -257,6 +275,10 @@
   border-radius: 1.2rem;
   background: $color-white;
   box-shadow: 0 0.4rem 3rem 0 #4d46fa1a;
+  @include max(1200px) {
+    margin-top: 0;
+    padding: 2rem;
+  }
   > div {
     &:not(:last-child) {
       padding-bottom: 2rem;
@@ -272,8 +294,6 @@
   .btn-link {
     min-width: 24.5rem;
     padding: 1.5rem 2rem;
-    color: $color-white;
-    border-radius: 1.2rem;
     background: $color-first;
     @include flex-btw;
     span {

@@ -1,0 +1,624 @@
+.list {
+  background: #f2f4f9;
+  .header {
+    background: $color-first;
+    &-logo {
+      a {
+        color: $color-white;
+      }
+    }
+    &-nav {
+      .header-logo {
+        a {
+          color: $color-black;
+        }
+      }
+    }
+    &-menu {
+      .menu-item {
+        a {
+          @include min(1201px) {
+            padding: 1.5rem 2rem;
+            border-radius: 10rem;
+            color: $color-white;
+            &:hover {
+              background: #ffffff1a;
+            }
+          }
+        }
+      }
+    }
+    &-link {
+      .btn-register {
+        @include min(1201px) {
+          color: $color-first;
+          background: $color-white;
+        }
+      }
+    }
+    &-bar {
+      span {
+        background: $color-white;
+      }
+    }
+  }
+  .main {
+    padding-top: 8rem;
+  }
+  .footer {
+    &-wrap {
+      padding: 0 0 4rem 0;
+      &::before {
+        display: none;
+      }
+    }
+  }
+  .logo {
+    width: 3rem;
+    height: 3rem;
+    @include flex-ct;
+  }
+  .vietnam-airlines {
+    border-radius: 0.6rem;
+    padding: 1rem 0.5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    img {
+      object-fit: contain;
+    }
+  }
+}
+.schedule {
+  &-list {
+    @include flex-btw;
+    @include max(1024px) {
+      gap: 1rem;
+      flex-direction: column;
+    }
+  }
+  &-item {
+    &:nth-child(1) {
+      @include max(1024px) {
+        width: 100%;
+        @include flex-ct;
+      }
+    }
+  }
+  &-swap {
+    gap: 7rem;
+    @include flex-al;
+    @include max(1024px) {
+      gap: 4rem;
+    }
+    @include max(767px) {
+      gap: 2rem;
+    }
+    .infomation-from {
+      padding: 0;
+      border: 0;
+      .location {
+        font-size: 1.6rem;
+      }
+      .time {
+        font-size: 1.2rem;
+      }
+    }
+    .infomation-switch {
+      &::before {
+        display: none;
+      }
+    }
+  }
+  &-infomation {
+    .list {
+      margin: 0 -1.5rem;
+      background: $color-white;
+      @include flex-al;
+      @include max(767px) {
+        margin: 0 -1rem;
+      }
+      &-item {
+        padding: 0 1.5rem;
+        position: relative;
+        @include max(767px) {
+          padding: 0 1rem;
+        }
+        &:not(:last-child) {
+          border-right: 0.1rem solid rgba(0, 0, 0, 0.1);
+        }
+        span {
+          color: $color-first;
+        }
+      }
+    }
+  }
+  &-link {
+    .btn-change {
+      gap: 1rem;
+      background: $color-second;
+      line-height: 2.2rem;
+      @include flex-al;
+      img {
+        width: 1.4rem;
+        height: auto;
+      }
+    }
+  }
+}
+.choose {
+  &-wrap {
+    margin: 0 -0.5rem;
+    @include flex;
+    @include max(1050px) {
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  }
+  &-column {
+    padding: 0 0.5rem;
+    &:first-child {
+      width: 75%;
+      @include max(1050px) {
+        width: 100%;
+      }
+    }
+    &:last-child {
+      width: 25%;
+      @include max(1050px) {
+        width: 100%;
+      }
+    }
+  }
+  &-filter {
+    justify-content: flex-end;
+    @include flex-al;
+    @include max(767px) {
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .text {
+      font-size: 1.2rem;
+      color: #868686;
+      margin-right: 1.5rem;
+      text-transform: uppercase;
+      @include max(767px) {
+        margin-right: 0;
+      }
+    }
+    .select-menu {
+      position: relative;
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+        @include max(767px) {
+          margin-right: 0;
+        }
+      }
+      &.active {
+        .select-options {
+          opacity: 1;
+          visibility: visible;
+          animation: fadeInUp 0.4s both;
+          -webkit-animation: fadeInUp 0.4s both;
+        }
+      }
+    }
+    .select-btn {
+      min-width: 12rem;
+      border-radius: 1.2rem;
+      padding: 0.8rem 1.6rem;
+      background: $color-white;
+      @include flex-btw;
+      .btn-text {
+        font-size: 1.2rem;
+      }
+    }
+    .select-options {
+      top: 4rem;
+      width: 100%;
+    }
+  }
+}
+.register {
+  @include min(1201px) {
+    position: sticky;
+    top: 9rem;
+  }
+  &-card {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    }
+    > div {
+      &:not(:last-child) {
+        padding-bottom: 2rem;
+      }
+      span {
+        display: block;
+        &.location {
+          font-weight: 700;
+        }
+      }
+      a {
+        &.detail {
+          font-weight: 700;
+          font-size: 1.2rem;
+          color: $color-first;
+          text-decoration: underline;
+        }
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    }
+  }
+  &-schedule {
+    padding: 1.5rem;
+    border-radius: 1.2rem 1.2rem 0 0;
+    background: $color-white;
+    flex-direction: column;
+    @include flex;
+    h2 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      position: relative;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      text-transform: uppercase;
+      &::before {
+        content: "";
+        bottom: 0;
+        left: -1.5rem;
+        height: 0.1rem;
+        position: absolute;
+        width: calc(100% + 3rem);
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+  &-infomation {
+    @include flex-al;
+    &:nth-child(1),
+    &:nth-child(2) {
+      gap: 1.2rem;
+    }
+    .number {
+      font-weight: 700;
+      color: $color-white;
+      background: #979797;
+      @include cir(3rem);
+      @include flex-ct;
+      &.number-color {
+        background: $color-first;
+      }
+    }
+    .airlines {
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+  &-change {
+    .btn-change {
+      color: $color-first;
+      text-align: center;
+      background: #4d46fa1a;
+    }
+  }
+  &-total {
+    padding: 1.5rem;
+    background: #f8f8f8;
+    border-radius: 0 0 1.2rem 1.2rem;
+    .total {
+      span {
+        display: block;
+        line-height: normal;
+        &.money {
+          font-weight: 700;
+          color: $color-second;
+        }
+      }
+    }
+  }
+}
+.tab {
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 1.2rem;
+  background: $color-white;
+  &-top {
+    margin-bottom: 2rem;
+    @include flex-btw;
+    @include max(1050px) {
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  }
+  &-box {
+    .come-column {
+      gap: 6rem;
+    }
+  }
+  &-infomation {
+    gap: 1.2rem;
+    @include flex-al;
+    .airlines {
+      span {
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      &-box {
+        &:nth-child(2) {
+          @include flex-al;
+          span {
+            position: relative;
+            font-size: 1.2rem;
+            font-weight: normal;
+            &:nth-child(1) {
+              &::after {
+                content: "";
+                display: inline-block;
+                margin: 0 0.5rem;
+                position: relative;
+                background: $color-black;
+                vertical-align: middle;
+                @include cir(0.4rem);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &-weight {
+    gap: 0.4rem;
+    flex-direction: column;
+    @include flex;
+    > div {
+      gap: 0.6rem;
+      @include flex-al;
+      span {
+        > span {
+          font-weight: 700;
+          color: $color-first;
+        }
+      }
+    }
+    img {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+  &-total {
+    .discount {
+      span {
+        color: #868686;
+        text-decoration: line-through;
+      }
+    }
+    .normal {
+      span {
+        font-weight: 700;
+        color: $color-second;
+      }
+    }
+  }
+  &-link {
+    &.active {
+      .btn-choose {
+        color: $color-white;
+        background: $color-second;
+      }
+    }
+    .btn-choose {
+      font-weight: 700;
+      padding: 0.6rem 1.5rem;
+      color: $color-second;
+      background: #f063361a;
+    }
+  }
+  &-list {
+    position: relative;
+    overflow: hidden;
+    .list {
+      margin: 0 -1.5rem;
+      background: #fff;
+      @include flex-al;
+      &-item {
+        padding: 0 1.5rem;
+        &.active {
+          a {
+            font-weight: 700;
+            color: $color-first;
+            border-bottom: 0.1rem solid $color-first;
+          }
+        }
+        a {
+          line-height: 2rem;
+          color: #868686;
+        }
+        .line {
+          width: 100%;
+          height: 0.1rem;
+          display: block;
+          position: absolute;
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+  &-bottom {
+    margin-bottom: -2rem;
+    > div {
+      padding-bottom: 2rem;
+    }
+  }
+  &-content {
+    gap: 10rem;
+    @include flex;
+    @include max(1050px) {
+      gap: 5rem;
+    }
+    @include max(850px) {
+      flex-direction: column;
+    }
+    &-list {
+      &:first-child {
+        width: 33.3333%;
+        @include max(850px) {
+          width: 100%;
+        }
+      }
+      &:last-child {
+        width: 66.6666%;
+        @include max(850px) {
+          width: 100%;
+        }
+      }
+    }
+    &-item {
+      .time {
+        &-come {
+          justify-content: space-between;
+          @include flex;
+        }
+        &-column {
+          justify-content: space-between;
+          flex-direction: column;
+          @include flex;
+          &:nth-child(3) {
+            .time-box {
+              span {
+                &:nth-child(1) {
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+        }
+        &-box {
+          span {
+            display: block;
+            &:first-child {
+              font-weight: 700;
+            }
+          }
+          &:nth-child(2) {
+            span {
+              font-weight: normal;
+            }
+          }
+        }
+        .line {
+          display: block;
+          width: 0.1rem;
+          height: 13.6rem;
+          position: relative;
+          background: $color-first;
+          &::before,
+          &::after {
+            content: "";
+            right: 0;
+            left: -0.38rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            display: block;
+            position: absolute;
+            border-radius: 10rem;
+            border: 0.2rem solid $color-first;
+          }
+          &::before {
+            top: 0;
+            background: $color-white;
+          }
+          &::after {
+            bottom: 0;
+            background: $color-first;
+          }
+        }
+      }
+      h3.title {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
+      h4.subtitle {
+        font-size: 1.2rem;
+        font-weight: normal;
+        margin-top: 2rem;
+      }
+      .tab-infomation {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  &-table {
+    padding: 1.5rem;
+    background: #f4f2f9;
+    border-radius: 1.2rem;
+    table {
+      width: 100%;
+      td {
+        width: 50%;
+        padding-bottom: 0.5rem;
+        p {
+          line-height: 2rem;
+          span {
+            font-weight: 700;
+            color: $color-first;
+          }
+        }
+      }
+    }
+  }
+  &.fare-info {
+    .tab-table {
+      padding: 0;
+      background: #fff;
+      tr {
+        &:nth-child(1) {
+          td {
+            &:nth-child(2) {
+              p {
+                font-weight: 700;
+              }
+            }
+          }
+        }
+        &:nth-child(4) {
+          td {
+            &:nth-child(1) {
+              p {
+                color: $color-second;
+              }
+            }
+          }
+        }
+        &:nth-child(5) {
+          td {
+            padding-top: 0.5rem;
+            border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+          }
+        }
+        td {
+        }
+      }
+    }
+  }
+  &-main {
+    .tab-content {
+      display: none;
+      &.open {
+        display: flex;
+      }
+    }
+  }
+}
+.section-top {
+  background: $color-white;
+  padding: 2rem 0;
+}
+.section-bottom {
+  padding: 1rem 0 5rem 0;
+}

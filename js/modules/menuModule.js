@@ -1,6 +1,6 @@
 export default function menuModule() {
   const menuBar = document.querySelector(".header-bar");
-  const hdMenu = document.querySelector(".hd-menu");
+  const hdMenu = document.querySelector(".header-nav");
   const overlay = document.querySelector(".overlay");
   const btnSubs = document.querySelectorAll(".subBtn");
   const body = document.querySelector("body");

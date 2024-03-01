@@ -1,9 +1,9 @@
 @import url("../js/library/pikaday/pikaday.min.css");
 
 // Core
-@import "../scss/core/base";
-@import "../scss/core/reset";
 @import "../scss/core/mixin";
+@import "../scss/core/reset";
+@import "../scss/core/base";
 @import "../scss/core/variable";
 @import "../scss/core/animation";
 
@@ -14,3 +14,4 @@
 
 // Layout
 @import "../scss/layout/home";
+@import "../scss/layout/list";

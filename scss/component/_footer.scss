@@ -2,6 +2,10 @@
   &-wrap {
     padding: 7rem 0 4rem 0;
     @include flex-btw;
+    @include max(767px) {
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
     &::before {
       content: "";
       top: -2rem;
@@ -17,8 +21,16 @@
     @include flex-al;
     &:first-child {
       margin: 0 -1.5rem;
+      @include max(455px) {
+        margin: 0;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
       .footer-item {
         padding: 0 1.5rem;
+        @include max(455px){
+          padding: 0;
+        }
       }
     }
     &:last-child {
@@ -26,12 +38,18 @@
     }
   }
   &-item {
+    .line {
+      width: 4rem;
+      height: 0.1rem;
+      display: block;
+      background: $color-black;
+    }
     a {
       gap: 0.5rem;
       @include flex;
       img {
         width: 1.8rem;
-        height: auto;
+        height: 1.8rem;
       }
     }
   }

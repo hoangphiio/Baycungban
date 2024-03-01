@@ -10,6 +10,7 @@
   &.in {
     background: $color-white;
     transition: 0.4s ease-in-out;
+    box-shadow: 0 0.2rem 0.9rem 0 rgba(0, 0, 0, 0.14);
   }
   &-wrap {
     height: 100%;
@@ -19,6 +20,11 @@
     @include flex;
     &:nth-child(1) {
       gap: 1.5rem;
+    }
+    &:nth-child(3) {
+      @include max(1200px) {
+        display: none;
+      }
     }
   }
   &-logo {
@@ -45,8 +51,15 @@
     .menu {
       margin: 0 -1.5rem;
       @include flex;
+      @include max(1200px) {
+        margin: 0;
+        flex-direction: column;
+      }
       &-item {
         padding: 0 1.5rem;
+        @include max(1200px) {
+          padding: 1.5rem;
+        }
         a {
           font-weight: 600;
           transition: 0.4s ease-in-out;
@@ -62,12 +75,7 @@
   &-link {
     .btn {
       &-register {
-        font-weight: 600;
-        color: $color-white;
-        padding: 1rem 1.6rem;
-        border-radius: 1.2rem;
         background: $color-first;
-        transition: 0.4s ease-in-out;
         @include min(1201px) {
           &:hover {
             color: $color-first;
@@ -81,6 +89,19 @@
     @include min(1201px) {
       display: none;
     }
+    &.active {
+      span {
+        &:nth-child(1) {
+          transform: translateY(0.9rem) rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: translateY(-0.9rem) rotate(-45deg);
+        }
+      }
+    }
     span {
       width: 3.2rem;
       height: 0.3rem;
@@ -90,6 +111,47 @@
       transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
       &:not(:first-child) {
         margin-top: 0.6rem;
+      }
+    }
+  }
+  &-nav {
+    transition: 0.4s ease-in-out;
+    @include max(1200px) {
+      top: 0;
+      left: 0;
+      z-index: 4;
+      width: 38rem;
+      height: 100%;
+      position: fixed;
+      background: #fff;
+      overflow: hidden auto;
+      transform: translateX(-100%);
+      box-shadow: 0 0.2rem 0.9rem 0 rgba(0, 0, 0, 0.14);
+      flex-direction: column;
+      @include flex;
+      @include max(429px) {
+        width: 32rem;
+      }
+    }
+    &.active {
+      transform: translateX(0);
+    }
+    .header-logo {
+      padding: 1.5rem;
+      border-bottom: 0.1rem solid #e5e5e5;
+      @include min(1201px) {
+        display: none;
+      }
+    }
+    .header-link {
+      display: block;
+      padding: 1.5rem;
+      @include min(1201px) {
+        display: none;
+      }
+      .btn-register {
+        display: block;
+        width: fit-content;
       }
     }
   }
