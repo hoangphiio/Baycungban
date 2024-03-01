@@ -1,9 +1,5 @@
 .ticket {
-  padding: 3rem;
-  border-radius: 1.2rem;
   flex-direction: column;
-  background: $color-white;
-  box-shadow: 0 0.4rem 3rem 0 #4d46fa1a;
   @include flex;
   &-wrap {
     margin: 0 -2.5rem;
@@ -13,6 +9,7 @@
     padding: 0 2.5rem;
   }
   &-list {
+    height: 100%;
     @include flex-al;
   }
   &-trip {
@@ -39,5 +36,256 @@
         border: 0.6rem solid $color-first;
       }
     }
+    &:nth-child(1) {
+      .btn-text {
+        min-width: 14rem;
+      }
+    }
+    &:nth-child(2) {
+      .btn-text {
+        min-width: 9.8rem;
+      }
+    }
+    .select {
+      &-menu {
+        position: relative;
+        &.active {
+          .select-options {
+            opacity: 1;
+            visibility: visible;
+            animation: fadeInUp 0.4s both;
+            -webkit-animation: fadeInUp 0.4s both;
+          }
+          .down {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      &-btn {
+        gap: 0.4rem;
+        position: relative;
+        cursor: pointer;
+        @include flex-al;
+        .btn-text {
+          display: block;
+        }
+        .down {
+          width: 0.8rem;
+          height: 0.4rem;
+          transition: 0.4s ease-in-out;
+        }
+      }
+      &-options {
+        left: 0;
+        top: 2.4rem;
+        opacity: 0;
+        min-width: 16rem;
+        padding: 0.5rem;
+        overflow: hidden;
+        position: absolute;
+        visibility: hidden;
+        border-radius: 1.2rem;
+        background: $color-white;
+        box-shadow: 0 0.4rem 3rem 0 #4d46fa1a;
+        animation: fadeInDown 0.3s both;
+        -webkit-animation: fadeInDown 0.3s both;
+        .option {
+          padding: 0.5rem;
+          cursor: pointer;
+        }
+      }
+    }
   }
+}
+.infomation {
+  &-wrap {
+    margin: 0 -1rem;
+    @include flex;
+  }
+  &-column {
+    padding: 0 1rem;
+    width: calc(100% / 2);
+    &:last-child {
+      .infomation-list {
+        gap: 3rem;
+        padding: 1.5rem 2rem;
+        border-radius: 1.2rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+  &-list {
+    height: 100%;
+    @include flex-al;
+  }
+  &-item {
+    &:first-child {
+      width: 50%;
+      .infomation-from {
+        &::after {
+          content: "";
+          top: 0;
+          right: -1rem;
+          bottom: 0;
+          width: 6rem;
+          height: 6rem;
+          margin: auto;
+          display: block;
+          position: absolute;
+          background: rgba(0, 0, 0, 0.1);
+          clip-path: circle(50% at 100% 50%);
+        }
+      }
+    }
+    &:last-child {
+      width: 50%;
+      .infomation-from {
+        padding-left: 4rem;
+        &::before {
+          content: "";
+          top: 0;
+          left: -1.3rem;
+          bottom: 0;
+          width: 5.9rem;
+          height: 5.9rem;
+          margin: auto;
+          display: block;
+          position: absolute;
+          background: $color-first;
+          clip-path: circle(50% at 0% 50%);
+        }
+      }
+    }
+  }
+  &-switch {
+    width: 2.5rem;
+    height: 1.4rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    &::before {
+      content: "";
+      top: 0;
+      right: -1.6rem;
+      bottom: 0;
+      width: 6.1rem;
+      height: 6.2rem;
+      margin: auto;
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      background: $color-white;
+    }
+    img {
+      z-index: 4;
+      position: relative;
+    }
+  }
+  &-from {
+    position: relative;
+    border-radius: 1.2rem;
+    padding: 1.5rem 2rem;
+    border: 0.2rem solid rgba(0, 0, 0, 0.1);
+    &.active {
+      border-color: $color-first;
+    }
+    span {
+      display: block;
+    }
+    .from {
+      color: #868686;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+    .location {
+      font-size: 2.4rem;
+      color: $color-first;
+      font-weight: 700;
+    }
+  }
+  &-date {
+    span {
+      font-size: 1.2rem;
+      color: #868686;
+    }
+    .date-box {
+      position: relative;
+      input {
+        border: 0;
+        outline: 0;
+        z-index: 1;
+        width: 100%;
+        font-size: 2.4rem;
+        color: $color-first;
+        position: relative;
+        background: transparent;
+        cursor: pointer;
+      }
+      img {
+        top: 0;
+        right: 2rem;
+        bottom: 0;
+        margin: auto;
+        width: 1.4rem;
+        height: auto;
+        position: absolute;
+      }
+    }
+    button {
+      border: 0;
+      outline: 0;
+      scale: 0.9;
+      color: #868686;
+      background: $color-white;
+      &.active {
+        scale: 1;
+        padding: 0.4rem;
+        color: $color-black;
+        border-bottom: 0.1rem solid $color-black;
+      }
+      &.btn-prev {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+}
+.form-group {
+  z-index: 9;
+  padding: 3rem;
+  margin-top: -18rem;
+  position: relative;
+  border-radius: 1.2rem;
+  background: $color-white;
+  box-shadow: 0 0.4rem 3rem 0 #4d46fa1a;
+  > div {
+    &:not(:last-child) {
+      padding-bottom: 2rem;
+    }
+  }
+}
+.more {
+  margin-bottom: -5.7rem;
+  &-link {
+    justify-content: flex-end;
+    @include flex;
+  }
+  .btn-link {
+    min-width: 24.5rem;
+    padding: 1.5rem 2rem;
+    color: $color-white;
+    border-radius: 1.2rem;
+    background: $color-first;
+    @include flex-btw;
+    span {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    img {
+      width: 2.2rem;
+      height: 1.2rem;
+    }
+  }
+}
+.home {
+  overflow: hidden;
 }

@@ -1,0 +1,38 @@
+.footer {
+  &-wrap {
+    padding: 7rem 0 4rem 0;
+    @include flex-btw;
+    &::before {
+      content: "";
+      top: -2rem;
+      left: 6.6rem;
+      z-index: -1;
+      width: 100vw;
+      height: calc(100% + 2rem);
+      position: absolute;
+      background: rgba(244, 242, 249, 1);
+    }
+  }
+  &-list {
+    @include flex-al;
+    &:first-child {
+      margin: 0 -1.5rem;
+      .footer-item {
+        padding: 0 1.5rem;
+      }
+    }
+    &:last-child {
+      gap: 1rem;
+    }
+  }
+  &-item {
+    a {
+      gap: 0.5rem;
+      @include flex;
+      img {
+        width: 1.8rem;
+        height: auto;
+      }
+    }
+  }
+}

@@ -5,6 +5,12 @@
   height: 8rem;
   z-index: 10;
   position: fixed;
+  background: transparent;
+  transition: 0.4s ease-in-out;
+  &.in {
+    background: $color-white;
+    transition: 0.4s ease-in-out;
+  }
   &-wrap {
     height: 100%;
     @include flex-btw;
@@ -43,6 +49,12 @@
         padding: 0 1.5rem;
         a {
           font-weight: 600;
+          transition: 0.4s ease-in-out;
+          @include min(1201px) {
+            &:hover {
+              color: $color-first;
+            }
+          }
         }
       }
     }
@@ -55,6 +67,29 @@
         padding: 1rem 1.6rem;
         border-radius: 1.2rem;
         background: $color-first;
+        transition: 0.4s ease-in-out;
+        @include min(1201px) {
+          &:hover {
+            color: $color-first;
+            background: $color-white;
+          }
+        }
+      }
+    }
+  }
+  &-bar {
+    @include min(1201px) {
+      display: none;
+    }
+    span {
+      width: 3.2rem;
+      height: 0.3rem;
+      display: block;
+      border-radius: 0.5rem;
+      background: rgb(0, 0, 0);
+      transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+      &:not(:first-child) {
+        margin-top: 0.6rem;
       }
     }
   }

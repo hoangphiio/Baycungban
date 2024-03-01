@@ -1,25 +1,25 @@
 export default function selectDropdownModule() {
-  // Change option selected
-  const label = document.querySelector(".dropdown__filter-selected");
-  const options = document.querySelectorAll(".dropdown__select-option");
+  function initializeDropdown(optionMenu) {
+    const selectBtn = optionMenu.querySelector(".select-btn"),
+      options = optionMenu.querySelectorAll(".option"),
+      btn_text = optionMenu.querySelector(".btn-text");
 
-  options.forEach((option) => {
-    option.addEventListener("click", () => {
-      label.textContent = option.textContent;
+    selectBtn.addEventListener("click", () =>
+      optionMenu.classList.toggle("active")
+    );
+
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        let selectedOption = option.querySelector(".option-text").innerText;
+        btn_text.innerText = selectedOption;
+
+        optionMenu.classList.remove("active");
+      });
     });
-  });
+  }
 
-  // Close dropdown onclick outside
-  document.addEventListener("click", (e) => {
-    const toggle = document.querySelector(".dropdown__switch");
-    const element = e.target;
-
-    if (element === toggle) return;
-
-    const isDropdownChild = element.closest(".dropdown__filter");
-
-    if (!isDropdownChild) {
-      toggle.checked = false;
-    }
+  // Sử dụng hàm để khởi tạo dropdown cho mỗi dropdown trên trang
+  document.querySelectorAll(".select-menu").forEach((optionMenu) => {
+    initializeDropdown(optionMenu);
   });
 }
