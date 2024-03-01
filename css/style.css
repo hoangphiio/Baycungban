@@ -1484,6 +1484,11 @@ img {
     flex-wrap: wrap;
   }
 }
+@media screen and (max-width: 435px) {
+  .tab-box:nth-child(2) {
+    width: 100%;
+  }
+}
 .tab-box .come-column {
   gap: 6rem;
 }

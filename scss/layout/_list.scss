@@ -336,6 +336,11 @@
     }
   }
   &-box {
+    &:nth-child(2) {
+      @include max(435px) {
+        width: 100%;
+      }
+    }
     .come-column {
       gap: 6rem;
     }
